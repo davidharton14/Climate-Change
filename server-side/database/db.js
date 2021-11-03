@@ -1,21 +1,6 @@
 const mongoose = require("mongoose");
 const MONGO_URL = "mongodb+srv://david:david@cluster0.axzcq.mongodb.net/app";
-// const connectDB = async () => {
-//   try {
-//     const url = "mongodb+srv://david:david@cluster0.axzcq.mongodb.net/app";
-//     mongoose.connect(url, {
-//       useNewUrlParser: true,
-//     });
-
-//     const db = mongoose.connection;
-//     db.once("open", (_) => {
-//       console.log("Database connected:", url);
-//     });
-//   } catch (err) {
-//     console.log("err");
-//   }
-// };
-
+const User = require("../models/User");
 class Controller {
   constructor() {
     this.connect();
@@ -86,15 +71,17 @@ class Controller {
       }
     );
   }
-  getUsers(res, data) {
-    User.find({}, data, (err, user) => {
-      if (err) throw err;
-      res.json({
-        status: 200,
-        message: "ok",
-        user: getUsers,
-      });
-    });
+  getUsers(res) {
+    User.find(
+      (err, users) => {
+        if (err) throw err;
+        res.json({
+          status: 200,
+          message: "ok",
+          users,
+        });
+      }
+    );
   }
   deleteUser(res, id) {
     User.deleteOne(
