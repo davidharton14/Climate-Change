@@ -3,9 +3,7 @@
     <v-app-bar app color="error">
       <h1 class="white--text">Welcome {{user.name}}</h1>
     <v-layout row wrap justify-end>
-      <v-btn color="error lighten-1" fab @click="newNote=true">
-        <v-icon>mdi-plus-thick</v-icon>
-      </v-btn>  
+      <v-btn @click="istoric()">Istoric</v-btn>  
     
     </v-layout>
     </v-app-bar>
@@ -246,10 +244,6 @@ export default {
       tasks:[],
       editedTask:null,
       drawer: null,
-      items: [
-        { title: "Home", icon: "mdi-view-dashboard" },
-        { title: "About", icon: "mdi-forum" },
-      ],
     };
   },
   mounted() {
@@ -323,6 +317,9 @@ export default {
   editTask(index){
     this.task=this.tasks[index].name
     this.editedTask=index
+  },
+  istoric(){
+    this.$router.push("/form");
   }
 }
 }
