@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const MONGO_URL = "mongodb+srv://david:david@cluster0.axzcq.mongodb.net/app";
+const MONGO_URL = "mongodb+srv://david:david@cluster0.axzcq.mongodb.net/climate_change";
 const User = require("../models/User");
 class Controller {
   constructor() {

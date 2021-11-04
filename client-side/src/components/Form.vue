@@ -1,5 +1,11 @@
 <template>
   <v-layout row wrap justify-center align-center class="main">
+    <v-app-bar app color="error">
+      <v-layout row wrap justify-end>
+        <v-btn @click="istoric()">Istoric</v-btn>
+        <v-btn @click="logout()">Logout</v-btn>
+      </v-layout>
+    </v-app-bar>
     <v-layout
       row
       wrap
@@ -41,7 +47,7 @@
           label="Indice"
           required
         ></v-select>
-        <v-btn color="error" @click="reset"> Submit </v-btn>
+        <v-btn color="error" @click="list()"> Submit </v-btn>
       </v-form>
     </v-layout>
   </v-layout>
@@ -135,6 +141,16 @@ export default {
     },
     resetValidation() {
       this.$refs.form.resetValidation();
+    },
+    istoric() {
+      this.$router.push("/form");
+    },
+    logout() {
+      localStorage.clear();
+      this.$router.push({ name: "Login" });
+    },
+    list() {
+      this.$router.push("/list");
     },
   },
 };

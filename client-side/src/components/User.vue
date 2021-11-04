@@ -4,7 +4,7 @@
       <h1 class="white--text">Welcome {{user.name}}</h1>
     <v-layout row wrap justify-end>
       <v-btn @click="istoric()">Istoric</v-btn>  
-    
+      <v-btn @click="logout()">Logout</v-btn>  
     </v-layout>
     </v-app-bar>
    <v-layout row wrap justify-center align-start>
@@ -320,6 +320,11 @@ export default {
   },
   istoric(){
     this.$router.push("/form");
+  },
+  logout(){
+    localStorage.clear()
+    this.$router.push({name:"Login"})
+
   }
 }
 }
