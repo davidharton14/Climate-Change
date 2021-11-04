@@ -6,12 +6,14 @@
         <v-btn> Home </v-btn>
         <v-btn @click="login()"> Login </v-btn>
 
-        <v-btn @click="contact()"> Contact </v-btn>
+        <v-btn> Contact </v-btn>
       </v-layout>
     </v-app-bar>
+    <h3>aSAsaSAsaSAss</h3>
   </v-layout>
 </template>
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
@@ -25,9 +27,6 @@ export default {
   methods: {
     login() {
       this.$router.push("/login");
-    },
-    contact() {
-      this.$router.push("/contact");
     },
   },
 };

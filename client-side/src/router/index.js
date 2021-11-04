@@ -5,6 +5,7 @@ import User from "../components/User";
 import Home from "../components/Home";
 import Form from "../components/Form";
 import List from "../components/List";
+import Contact from "../components/Contact";
 Vue.use(VueRouter)
 
 const routes = [
@@ -28,6 +29,10 @@ const routes = [
   {
     path: '/list',
     component: List,
+  },
+  {
+    path: '/contact',
+    component: Contact,
   },
 ]
 

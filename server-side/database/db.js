@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const MONGO_URL = "mongodb+srv://david:david@cluster0.axzcq.mongodb.net/climate_change";
+const MONGO_URL = "mongodb+srv://david:david@cluster0.axzcq.mongodb.net/asd";
 const User = require("../models/User");
 class Controller {
   constructor() {
@@ -152,5 +152,6 @@ class Controller {
       }
     );
   }
+  
 }
 exports.db = new Controller();
